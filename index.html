@@ -3,44 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
   <title>Frontend Mentor | Intro component with sign up form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <main class="form">
     <section class="form__copy">
-      <h1>Learn to code by watching others</h1>
-      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+      <div class="container">
+        <h1>Learn to code by watching others</h1>
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+      </div>
     </section>
     <section class="form__details">
-      <div class="form__title">Try it free 7 days then $20/mo. thereafter</div>
-      <form>
-        <div class="form__container">
-          <div class="input-group">
+      <div class="container">
+        <div class="form__title">
+          <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+        </div>
+        <form class="form__group">
+          <div class="input-container flex">
             <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
             <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
             <input type="email" name="email" id="email" placeholder="Email Address" required>
             <input type="password" name="password" id="password" placeholder="Password" required>
-            <input type="button" value="Claim your free trial">
+            <input class="button" type="button" value="Claim your free trial">
           </div>
-        </div>
-        <p>By clicking the button, you are agreeing to our Terms and Services</p>
-      </form>
+          <p>By clicking the button, you are agreeing to our <span class="terms-link"> Terms and Services</span></p>
+        </form>
+      </div>
     </section>
   </main>
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
+  <footer class="form__attribution">
+    <div class="container">
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </div>
   </footer>
 </body>
 </html>

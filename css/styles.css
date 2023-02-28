@@ -1,0 +1,149 @@
+:root {
+  /* Colors */
+  --primary-dark-text: hsl(249, 10%, 26%);
+  --secondary-light-text: hsl(246, 25%, 77%);
+  --tertiary-dark-text: hsl(0, 100%, 74%);
+  --primary-background: hsl(154, 59%, 51%);
+  --secondary-background: hsl(248, 32%, 49%);
+ /* Fonts */
+  --font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--font-family);
+}
+
+body {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../images/bg-intro-mobile.png') var(--tertiary-dark-text);
+}
+
+img {
+  max-width: 100%
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+h1,
+p {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin: 80px 0;
+}
+
+.form__copy {
+  margin-bottom: 60px;
+}
+
+.form__copy h1 {
+  margin-bottom: 18px;
+  letter-spacing: 0.1rem;
+}
+
+.form__copy p {
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+}
+
+.form__title {
+  padding: 2em;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-background);
+}
+
+.form__title p {
+  width: 70%;
+  margin: 0 auto;
+  line-height: 2.5rem;
+}
+
+.form__group {
+  padding: 2.3em;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.input-container {
+  margin-bottom: 10px;
+  gap: 13px;
+}
+
+.input-container input {
+  padding: 1.3em;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--primary-dark-text);
+  border: 1px solid var(--secondary-light-text);
+  border-radius: 5px;
+}
+
+.input-container .button {
+  color: #FFFFFF;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: var(--primary-background);
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 0px 0px #2fbb7e;
+}
+
+.form__group p {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--secondary-light-text);
+}
+
+.form__group .terms-link {
+  font-weight: 700;
+  color: var(--tertiary-dark-text);
+}
+
+.form__attribution {
+  margin-top: 20px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
