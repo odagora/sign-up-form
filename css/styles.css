@@ -49,9 +49,8 @@ p {
 }
 
 .container {
-  width: 95%;
+  width: min(95%, 500px);
   margin: 0 auto;
-  max-width: 1200px;
 }
 
 .flex {
@@ -137,6 +136,40 @@ p {
 
 .form__attribution {
   margin-top: 20px;
+}
+
+@media (min-width: 1440px) {
+  .form {
+    display: flex;
+    align-items: center;
+    width: min(80%, 1200px);
+  }
+
+  .form__copy {
+    width: 50%;
+    margin: 0;
+  }
+
+  .form__copy h1 {
+    font-size: 4.6rem;
+  }
+
+  .form__copy h1,
+  .form__copy p {
+    text-align: left;
+  }
+
+  .form__details {
+    width: 50%;
+  }
+
+  .container {
+    width: 550px;
+  }
+
+  .form__group {
+    padding: 4.3em;
+  }
 }
 
 .attribution {
