@@ -25,11 +25,23 @@
         </div>
         <form class="form__group">
           <div class="input-container flex">
-            <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
-            <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
-            <input type="email" name="email" id="email" placeholder="Email Address" required>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-            <input class="button" type="button" value="Claim your free trial">
+            <div class="form__field-group">
+              <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+              <span class="error-icon"></span>
+            </div>
+            <div class="form__field-group">
+              <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+              <span class="error-icon"></span>
+            </div>
+            <div class="form__field-group">
+              <input type="email" name="email" id="email" placeholder="Email Address" required>
+              <span class="error-icon"></span>
+            </div>
+            <div class="form__field-group">
+              <input type="password" name="password" id="password" placeholder="Password" required>
+              <span class="error-icon"></span>
+            </div>
+            <input class="button" type="submit" value="Claim your free trial">
           </div>
           <p>By clicking the button, you are agreeing to our <span class="terms-link"> Terms and Services</span></p>
         </form>
@@ -44,5 +56,6 @@
       </p>
     </div>
   </footer>
+  <script src="./js/index.js"></script>
 </body>
 </html>
