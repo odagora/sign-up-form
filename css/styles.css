@@ -156,6 +156,7 @@ input[aria-invalid="true"] {
   background-color: var(--primary-background);
   border: 1px solid transparent;
   box-shadow: 0px 4px 0px 0px #2fbb7e;
+  cursor: pointer;
 }
 
 .form__group p {

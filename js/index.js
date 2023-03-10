@@ -26,6 +26,7 @@ function initValidation(form) {
       field.setAttribute("aria-invalid", true);
       field.setAttribute("placeholder", "");
       field.parentElement.querySelector('.error-icon').style.display = 'block';
+      field.closest('.input-container').querySelector('.button').style.opacity = '60%';
       const message = getMessage(field);
       errorBox.textContent = message || field.validationMessage;
     })
@@ -41,14 +42,34 @@ function initValidation(form) {
      * Avoid to execute re-validation as user types
      */
     field.addEventListener("input", () => {
-      const valid = field.checkValidity();
-      if (valid) {
-        field.setAttribute("aria-invalid", false);
-        field.parentElement.querySelector('.error-icon').style.display = 'none';
-        errorBox.textContent = "";
-      }
+      debounceCheckValidity(field, fields, errorBox);
     })
   })
+}
+
+const debounceCheckValidity = debounce((field, fields, errorBox) => {
+  inputCheckValidity(field, fields, errorBox)
+})
+
+function inputCheckValidity(field, fields, errorBox) {
+  const validField = field.checkValidity();
+  const formValid = fields.every(ele => ele.ariaInvalid === 'false' && ele.value !== "");
+  if (validField) {
+    field.setAttribute("aria-invalid", false);
+    field.parentElement.querySelector('.error-icon').style.display = 'none';
+    errorBox.textContent = "";
+  }
+  if (formValid) {
+    form.querySelector('.button').style.opacity = '100%';
+  }
+}
+
+function formCheckValidity(form) {
+  const validForm = form.checkValidity();
+
+  if(validForm) {
+    form.querySelector('.button').style.opacity = '100%';
+  }
 }
 
 function getMessage(field) {
@@ -63,6 +84,17 @@ function formatFieldName(name) {
     .split('-')
     .map(word => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
     .join(' ');
+}
+
+function debounce(callBack, delay = 250) {
+  let timeout;
+
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      callBack(...args)
+    }, delay)
+  }
 }
 
 const form = document.querySelector("form");
