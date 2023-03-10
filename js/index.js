@@ -17,7 +17,7 @@ function initValidation(form) {
     field.setAttribute("aria-invalid", false);
     const errorBox = document.createElement("div");
     errorBox.classList.add("error");
-    const errorId = `${field.id} Error`;
+    const errorId = `${field.id}-error`;
     errorBox.setAttribute("id", errorId);
     field.setAttribute("aria-describedBy", errorId);
     field.insertAdjacentElement("afterend", errorBox);
@@ -49,7 +49,7 @@ function initValidation(form) {
 
 const debounceCheckValidity = debounce((field, fields, errorBox) => {
   inputCheckValidity(field, fields, errorBox)
-})
+}, 120)
 
 function inputCheckValidity(field, fields, errorBox) {
   const validField = field.checkValidity();
@@ -86,7 +86,7 @@ function formatFieldName(name) {
     .join(' ');
 }
 
-function debounce(callBack, delay = 250) {
+function debounce(callBack, delay = 1000) {
   let timeout;
 
   return (...args) => {

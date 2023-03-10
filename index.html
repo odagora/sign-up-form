@@ -26,19 +26,23 @@
         <form class="form__group">
           <div class="input-container flex">
             <div class="form__field-group">
-              <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+              <label for="first-name" hidden>First Name</label>
+              <input type="text" name="first-name" id="first-name" placeholder="First Name"  aria-label="first name" required>
               <span class="error-icon"></span>
             </div>
             <div class="form__field-group">
-              <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+              <label for="last-name" hidden>Last Name</label>
+              <input type="text" name="last-name" id="last-name" placeholder="Last Name" aria-label="last name" required>
               <span class="error-icon"></span>
             </div>
             <div class="form__field-group">
-              <input type="email" name="email" id="email" placeholder="Email Address" required>
+              <label for="email" hidden>Email</label>
+              <input type="email" name="email" id="email" placeholder="Email Address" aria-label="email" required>
               <span class="error-icon"></span>
             </div>
             <div class="form__field-group">
-              <input type="password" name="password" id="password" placeholder="Password" required>
+              <label for="password" hidden></label>
+              <input type="password" name="password" id="password" placeholder="Password" aria-label="password" required>
               <span class="error-icon"></span>
             </div>
             <input class="button" type="submit" value="Claim your free trial">
